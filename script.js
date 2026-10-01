@@ -5,7 +5,7 @@ const submit = document.querySelector('.enterButton');
 
 //AI placeholder welcome message
 const messages = [{
-    text: 'Ciao sono Bool AI',
+    text: 'Ciao sono Boolean AI',
     date: 'now',
     user: 'agent',
 }]
@@ -25,11 +25,11 @@ function messageRendering() {
 
     //html DOM message code block
     messageTab.innerHTML += `
-    <div>
+    <div class='bg-green-300'>
     <p> ${userText}
     </p>
-    <span>${date}</span>
+    <span>${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}</span>
     </div>
     `;
-    console.log(messageTab);
+    messageText.value = ''
 }

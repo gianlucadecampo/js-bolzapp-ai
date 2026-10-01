@@ -14,21 +14,25 @@
     <!--Top of the page, info contact, status-->
     <header>
         <section>
-            <ul>
-                <li><img src="./assets/avatar.png" alt="AI avatar"></li>
-                <li>
-                    <div>
-                        <span>Bool AI</span>
-                        <span>Online 🟢</span>
-                    </div>
-                </li>
-                <li><i class="bi bi-search"></i></li>
-                <li><i class="bi bi-journal-medical"></i></li>
-                <li><i class="bi bi-three-dots"></i></li>
+            <ul class="flex justify-between items-center m-2">
+                <div class="flex gap-5">
+                    <li><img src="./assets/ai-avatar.png" alt="AI avatar" class="max-w-18"></li>
+                    <li>
+                        <div class="flex flex-col gap-4 m-3">
+                            <span>Boolean AI</span>
+                            <span>Online 🟢</span>
+                        </div>
+                    </li>
+                </div>
+                <div class="flex gap-5">
+                    <li><i class="bi bi-search"></i></li>
+                    <li><i class="bi bi-journal-medical"></i></li>
+                    <li><i class="bi bi-three-dots"></i></li>
+                </div>
             </ul>
         </section>
     </header>
-    <main>
+    <main class="bg-[url('./assets/whatsapp-background.png')] bg-cover bg-center h-[calc(100vh-140px)] overflow-y-auto">
         <!--Chat message section-->
         <section class="messageSpace">
 
@@ -37,8 +41,8 @@
     <!--Input section-->
     <footer>
         <form action="">
-            <input type="text" class="messageText">
-            <button class="enterButton border-2" type="submit"><i class="bi bi-arrow-up-circle"></i></button>
+            <input type="text" class="messageText border-2">
+            <button class="enterButton" type="submit"><i class="bi bi-arrow-up-circle"></i></button>
         </form>
     </footer>
 </body>
