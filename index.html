@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="configs.js" defer></script>
     <script src="script.js" defer></script>
     <title>Bolzapp</title>
 </head>
@@ -13,13 +14,14 @@
 <body>
     <!--Top of the page, info contact, status-->
     <header>
-        <section>
-            <ul class="flex justify-between items-center m-2">
-                <div class="flex gap-5">
-                    <li><img src="./assets/ai-avatar.png" alt="AI avatar" class="max-w-18"></li>
+        <section class="bg-zinc-200">
+            <ul class="flex justify-between items-center mx-6">
+                <div class="flex gap-5 items-center">
+                    <li><img src="./assets/ai-avatar.png" alt="AI avatar" class="max-w-15 rounded-4xl border-2">
+                    </li>
                     <li>
-                        <div class="flex flex-col gap-4 m-3">
-                            <span>Boolean AI</span>
+                        <div class="flex flex-col gap-1 m-3">
+                            <span class="font-bold">Boolean AI</span>
                             <span>Online 🟢</span>
                         </div>
                     </li>
@@ -39,9 +41,9 @@
         </section>
     </main>
     <!--Input section-->
-    <footer>
-        <form action="">
-            <input type="text" class="messageText border-2">
+    <footer class="bg-zinc-200">
+        <form action="" class="flex justify-around items-center min-h-16">
+            <input type="text" class="messageText border-2 rounded-xl p-1" placeholder="Type here...">
             <button class="enterButton" type="submit"><i class="bi bi-arrow-up-circle"></i></button>
         </form>
     </footer>

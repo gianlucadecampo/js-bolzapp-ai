@@ -3,12 +3,8 @@ const messageTab = document.querySelector('.messageSpace');
 const messageText = document.querySelector('.messageText');
 const submit = document.querySelector('.enterButton');
 
-//AI placeholder welcome message
-const messages = [{
-    text: 'Ciao sono Boolean AI',
-    date: 'now',
-    user: 'agent',
-}]
+//message history
+const messageHistory = [];
 
 // UI message rendering at submit
 submit.addEventListener('click', (e) => {
@@ -18,18 +14,36 @@ submit.addEventListener('click', (e) => {
 
 
 /////////////////////////////////////////////// Functions///////////////////////////////////////////
+
+//Render the input message
 function messageRendering() {
-    const userText = messageText.value;
-    const date = new Date();
-    const user = 'Gianluca';
+    const newMessage = {
+        text: messageText.value,
+        date: new Date(),
+        user: 'Gianluca'
+    }
+    messageHistory.push(newMessage);
 
     //html DOM message code block
     messageTab.innerHTML += `
     <div class='bg-green-300'>
-    <p> ${userText}
+    <p> ${newMessage.text}
     </p>
-    <span>${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}</span>
+    <span>${newMessage.date.getHours()}:${newMessage.date.getMinutes()}:${newMessage.date.getSeconds()}</span>
     </div>
     `;
     messageText.value = ''
+}
+
+//http call into Gemini API key
+async function getGeminiResponse() {
+    const url = `${apiGemini.endpoint}?key=${apiGemini.key}`;
+
+    const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({}),
+        headers: { 'Constent-Type': 'application/json' },
+    });
+    const data = await response.json(); x
+    return data.candidates[0].content.parts[0].text;
 }
