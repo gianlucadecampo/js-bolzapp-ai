@@ -41,9 +41,9 @@ async function getGeminiResponse() {
 
     const response = await fetch(url, {
         method: 'POST',
-        body: JSON.stringify({}),
-        headers: { 'Constent-Type': 'application/json' },
+        body: JSON.stringify({}), //insert prompt part
+        headers: { 'Content-Type': 'application/json' },
     });
-    const data = await response.json(); x
+    const data = await response.json();
     return data.candidates[0].content.parts[0].text;
 }
